@@ -6,9 +6,16 @@ public:
 	const int LogLevelError = 0;
 	const int LogLevelWarning = 1;
 	const int LogLevelInfo = 2;
+
 private:
 	int m_LogLevel = LogLevelWarning;
+
 public:
+	void SetLogLevel(int logLevel)
+	{
+		m_LogLevel = logLevel;
+	}
+
 	void Error(const char* message)
 	{
 		if (m_LogLevel >= LogLevelError)
@@ -30,5 +37,5 @@ int main()
 {
 	Log log;
 	log.Warn("Hello world!");
-
 }
+
